@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    regex (0.1.0)
+    eregex (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -33,8 +33,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  eregex!
   rake (~> 13.0)
-  regex!
   rubocop (~> 1.7)
 
 BUNDLED WITH

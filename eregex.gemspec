@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-require_relative "lib/regex/version"
+require_relative "lib/eregex/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "regex"
-  spec.version       = Regex::VERSION
+  spec.name          = "eregex"
+  spec.version       = ERegex::VERSION
   spec.authors       = ["Ahmed Sayed"]
   spec.email         = ["e.eng.ahmedsayed@gmail.com"]
 
   spec.summary       = "Easy way to use regex"
   spec.description   = "Easy way to use regex"
-  spec.homepage      = "https://github.com/ahmedsayedabdelsalam/regex/wiki"
+  spec.homepage      = "https://github.com/ahmedsayedabdelsalam/eregex/wiki"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/ahmedsayedabdelsalam/regex"
-  spec.metadata["changelog_uri"] = "https://github.com/ahmedsayedabdelsalam/regex/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/ahmedsayedabdelsalam/eregex"
+  spec.metadata["changelog_uri"] = "https://github.com/ahmedsayedabdelsalam/eregex/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

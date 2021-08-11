@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "regex/version"
+require_relative "eregex/version"
 
 # Regex Module
-module Regex
+module ERegex
   class Error < StandardError; end
 
   PATTERN_ALPHA = '\pL\pM'
