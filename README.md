@@ -1,8 +1,7 @@
 # Regex
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/regex`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby version of this awesome package https://github.com/hotmeteor/regex
+to provide easy API to deal with Regex.
 
 ## Installation
 
@@ -22,7 +21,91 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Regex comes with a set of common regex patterns that are ready to use. These patterns can be used to either **replace** or **match** against values. Every pattern is both case-insensitive and able to interpret unicode characters, and should support all languages.
+
+Additionally, beyond the methods below both the underlying `match` and `replace` methods are exposed to pass in custom patterns.
+
+### Match
+
+Match methods return true or false depending on if the subject value contains anything but the expected pattern.
+
+You may optional allow whitespace by passing `true` as a second parameter.
+
+#### Methods
+
+```ruby
+Regex.alpha?(subject, allow_whitespace: false)
+``` 
+Checks if the value contains anything but letters.
+
+***
+
+```ruby
+Regex.alphanumeric?(subject, allow_whitespace: false)
+``` 
+Checks if the value contains anything but letters and numbers.
+
+***
+
+```ruby
+Regex.alphadash?(subject, allow_whitespace: false)
+``` 
+Checks if the value contains anything but letters, numbers, and `.-_`.
+
+***
+
+```ruby
+Regex.digits?(subject, allow_whitespace: false)
+``` 
+Checks if the value contains anything but integers.
+
+***
+
+```ruby
+Regex.numeric?(subject)
+``` 
+Checks if the value contains anything but numeric values, including decimals and negative numbers. Does not allow for whitespace.
+
+
+### Replace
+
+Replace methods replace anything in the subject value that doesn't match the pattern with the provided replacement.
+
+The default replacement is nothing: it just removes the character.
+
+#### Methods
+```ruby
+Regex.alpha(subject, replace = "")
+``` 
+Replaces all characters in the subject except letters.
+
+***
+
+```ruby
+Regex.alphanumeric(subject, replace = "")
+``` 
+Replaces all characters in the subject except letters and numbers.
+
+***
+
+```ruby
+Regex.alphadash(subject, replace = "")
+``` 
+Replaces all characters in the subject except letters, numbers, and `.-_`.
+
+***
+
+```ruby
+Regex.digits(subject, replace = "")
+``` 
+Replaces all characters in the subject except integers.
+
+***
+
+```ruby
+Regex.numeric(subject, replace = "")
+``` 
+Replaces all characters in the subject except numeric values, including decimals and negative numbers.
 
 ## Development
 
