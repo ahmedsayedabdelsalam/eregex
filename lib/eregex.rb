@@ -53,7 +53,7 @@ module ERegex
   end
 
   def self.match(subject, pattern, allow_whitespace: false)
-    !!(subject =~ wrap_match_pattern(pattern, allow_whitespace))
+    !!(subject =~ wrap_match_pattern(pattern, allow_whitespace: allow_whitespace))
   end
 
   def self.replace(subject, pattern, replacement = "")
