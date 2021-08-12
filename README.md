@@ -62,6 +62,13 @@ Checks if the value contains anything but integers.
 ***
 
 ```ruby
+ERegex.email?(subject)
+``` 
+Checks if the value is an Email Address.
+
+***
+
+```ruby
 ERegex.numeric?(subject)
 ``` 
 Checks if the value contains anything but numeric values, including decimals and negative numbers. Does not allow for whitespace.

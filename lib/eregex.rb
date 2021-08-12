@@ -10,6 +10,7 @@ module ERegex
   PATTERN_ALPHANUMERIC = '\pL\pM\pN'
   PATTERN_ALPHADASH = '\pL\pM\pN._-'
   PATTERN_DIGITS = "0-9"
+  PATTERN_EMAIL = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
   PATTERN_NUMERIC = '-?\d*(\.\d+)?'
 
   def self.alpha?(subject, allow_whitespace: false)
@@ -26,6 +27,10 @@ module ERegex
 
   def self.digits?(subject, allow_whitespace: false)
     match(subject, self::PATTERN_DIGITS, allow_whitespace: allow_whitespace)
+  end
+
+  def self.email?(subject)
+    regex(subject, self::PATTERN_EMAIL)
   end
 
   def self.numeric?(subject)
@@ -54,6 +59,10 @@ module ERegex
 
   def self.match(subject, pattern, allow_whitespace: false)
     !!(subject =~ wrap_match_pattern(pattern, allow_whitespace: allow_whitespace))
+  end
+
+  def self.regex(subject, pattern)
+    !!(subject =~ pattern)
   end
 
   def self.replace(subject, pattern, replacement = "")
