@@ -13,19 +13,19 @@ module ERegex
   PATTERN_NUMERIC = '-?\d*(\.\d+)?'
 
   def self.alpha?(subject, allow_whitespace: false)
-    match(subject, self::PATTERN_ALPHA, allow_whitespace)
+    match(subject, self::PATTERN_ALPHA, allow_whitespace: allow_whitespace)
   end
 
   def self.alphadash?(subject, allow_whitespace: false)
-    match(subject, self::PATTERN_ALPHADASH, allow_whitespace)
+    match(subject, self::PATTERN_ALPHADASH, allow_whitespace: allow_whitespace)
   end
 
   def self.alphanumeric?(subject, allow_whitespace: false)
-    match(subject, self::PATTERN_ALPHANUMERIC, allow_whitespace)
+    match(subject, self::PATTERN_ALPHANUMERIC, allow_whitespace: allow_whitespace)
   end
 
   def self.digits?(subject, allow_whitespace: false)
-    match(subject, self::PATTERN_DIGITS, allow_whitespace)
+    match(subject, self::PATTERN_DIGITS, allow_whitespace: allow_whitespace)
   end
 
   def self.numeric?(subject)
