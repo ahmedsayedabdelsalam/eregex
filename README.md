@@ -73,6 +73,13 @@ ERegex.numeric?(subject)
 ``` 
 Checks if the value contains anything but numeric values, including decimals and negative numbers. Does not allow for whitespace.
 
+***
+
+```ruby
+ERegex.uuid?(subject)
+``` 
+Checks if the value is a UUID. Does not allow whitespaces.
+
 
 ### Replace
 
