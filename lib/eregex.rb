@@ -12,6 +12,7 @@ module ERegex
   PATTERN_DIGITS = "0-9"
   PATTERN_EMAIL = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
   PATTERN_NUMERIC = '-?\d*(\.\d+)?'
+  PATTERN_UUID = /[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}/.freeze
 
   def self.alpha?(subject, allow_whitespace: false)
     match(subject, self::PATTERN_ALPHA, allow_whitespace: allow_whitespace)
@@ -35,6 +36,10 @@ module ERegex
 
   def self.numeric?(subject)
     match(subject, self::PATTERN_NUMERIC)
+  end
+
+  def self.uuid?(subject)
+    regex(subject, self::PATTERN_UUID)
   end
 
   def self.alpha(subject, replace = "")
